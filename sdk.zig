@@ -26,8 +26,8 @@ pub fn Sdk(comptime deps: anytype) type {
             if (step.target.toTarget().cpu.arch != .wasm32) {
                 try deps.glfw.link(b, step, options.glfw_options);
                 try deps.gpu_dawn.link(b, step, options.gpu_dawn_options);
-                step.addCSourceFile(sdkPath("/src/mach_dawn.cpp"), &.{"-std=c++17"});
-                step.addIncludePath(sdkPath("/src"));
+                //step.addCSourceFile(sdkPath("/src/mach_dawn.cpp"), &.{"-std=c++17"});
+                //step.addIncludePath(sdkPath("/src"));
             }
         }
 

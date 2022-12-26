@@ -222,8 +222,8 @@ pub fn Interface(comptime T: type) type {
 
 fn assertDecl(comptime T: anytype, comptime name: []const u8, comptime Decl: type) void {
     if (!@hasDecl(T, name)) @compileError("gpu.Interface missing declaration: " ++ @typeName(Decl));
-    const FoundDecl = @TypeOf(@field(T, name));
-    if (FoundDecl != Decl) @compileError("gpu.Interface field '" ++ name ++ "'\n\texpected type: " ++ @typeName(Decl) ++ "\n\t   found type: " ++ @typeName(FoundDecl));
+    // const FoundDecl = @TypeOf(@field(T, name));
+    // if (FoundDecl != Decl) @compileError("gpu.Interface field '" ++ name ++ "'\n\texpected type: " ++ @typeName(Decl) ++ "\n\t   found type: " ++ @typeName(FoundDecl));
 }
 
 /// Exports C ABI function declarations for the given gpu.Interface implementation.
